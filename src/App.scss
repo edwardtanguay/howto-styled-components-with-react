@@ -1,15 +1,9 @@
 body {
-	background-color: #333;
+	background: #333;
 	color: #ccc;
-	padding: 20px;
-	font-size: 1.5rem;
+	padding: 0 20px;
 
-	a {
-		color: #aaa;
-		text-decoration: none;
-	}
-
-	a.active {
-		color: yellow;
+	h1 {
+		color: rgb(226, 226, 151);
 	}
 }

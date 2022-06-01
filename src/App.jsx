@@ -5,9 +5,18 @@ import styled from 'styled-components';
 import * as qstr from './qstr';
 
 qstr.randomize(nouns);
+
 const Button = styled.button`
 	background-color: ${(props) =>
 		props.mode === 'selected' ? 'green' : '#eee'};
+`;
+
+const Noun = styled.div`
+	background-color: ${(props) =>
+		props.mode === 'selected' ? 'green' : '#444'};
+	color: ${(props) =>
+		props.mode === 'selected' ? 'white' : '#777'};
+	padding: 5px;
 `;
 
 function App() {
@@ -35,8 +44,8 @@ function App() {
 					das
 				</Button>
 				<Button
-					onClick={() => setChoice('')}
-					mode={choice === '' ? 'selected' : 'unselected'}
+					onClick={() => setChoice('hide')}
+					mode={choice === 'hide' ? 'selected' : 'unselected'}
 				>
 					hide
 				</Button>
@@ -44,10 +53,10 @@ function App() {
 			<div className="nouns">
 				{nouns.map((noun, index) => {
 					return (
-						<div className="noun">
+						<Noun mode={choice === noun.article ? 'selected' : 'unselected'}>
 							{choice === noun.article && <>{noun.article}</>}{' '}
 							{noun.singular}
-						</div>
+						</Noun>
 					);
 				})}
 			</div>

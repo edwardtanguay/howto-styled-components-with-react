@@ -23,7 +23,7 @@ function App() {
 	const [choice, setChoice] = useState('hide');
 	return (
 		<div className="App">
-			<h1>German choice Practice</h1>
+			<h1>German Article Practice</h1>
 			<div className="buttons">
 				<Button
 					onClick={() => setChoice('der')}
